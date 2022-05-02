@@ -7,6 +7,12 @@ const user_select = document.getElementById("user_select");
 const computer_select = document.getElementById("computer_select");
 const winner = document.getElementById("winner");
 
+//modal buttons
+
+const openBtn = document.getElementById("open");
+const closeBtn = document.getElementById("close");
+const modal = document.getElementById("modal");
+
 const choices = ["paper", "rock", "scissors"];
 let score = 0;
 let userChoice = undefined;
@@ -24,6 +30,14 @@ buttons.forEach((button) => {
 reset.addEventListener("click", () => {
   main.style.display = "flex";
   selection.style.display = "none";
+});
+
+openBtn.addEventListener("click", () => {
+  modal.style.display = "flex";
+});
+
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
 });
 
 //function to check winner
