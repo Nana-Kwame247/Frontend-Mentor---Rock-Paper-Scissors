@@ -176,7 +176,8 @@ main::after {
 
 .selection {
   display: none;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   text-align: center;
   width: 800px;
@@ -216,4 +217,33 @@ main::after {
   cursor: pointer;
   margin-top: 100px;
   transform: scale(1.5);
+}
+
+/* media queries */
+
+@media (max-width: 600px) {
+  .go-down {
+    order: 1;
+  }
+  .score-container {
+    transform: scale(0.75);
+  }
+  h1,
+  h2,
+  h4 {
+    transform: scale(0.85);
+  }
+  button {
+    transform: scale(0.8);
+  }
+  .selection .btn-circle {
+    margin: 50px 20px;
+    transform: scale(1);
+  }
+
+  .btn-rules {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+  }
 }
