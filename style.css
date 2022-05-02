@@ -5,5 +5,116 @@
 }
 
 body {
+  background: radial-gradient(
+    circle at 50% 10%,
+    hsl(214, 47%, 23%),
+    hsl(237, 49%, 15%)
+  );
+  color: #fff;
   font-family: "Barlow Semi Condensed", sans-serif;
+  min-height: 100vh;
+  /* font-size: 62.5%; */
+}
+
+/* header container */
+
+.container {
+  width: 700px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+header {
+  border: 3px solid hsl(217, 16%, 45%);
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+  margin: 50px;
+}
+
+h1 {
+  font-size: 3rem;
+  display: flex;
+  flex-direction: column;
+  line-height: 0.8;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+h4 {
+  color: hsl(229, 64%, 46%);
+  letter-spacing: 5px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.score-container {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px 40px;
+  text-align: center;
+}
+
+.score-container p {
+  color: hsl(229, 25%, 31%);
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* rules btn */
+
+.btn-rules {
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 12px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 20px;
+  letter-spacing: 2px;
+  padding: 12px 40px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  text-transform: uppercase;
+}
+
+/* rock, paper , scissors btn */
+
+.btn-circle {
+  border: none;
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+}
+
+.btn-circle .wrapper {
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  width: 150px;
+}
+
+.btn-paper {
+  background: linear-gradient(
+    to bottom,
+    hsl(230, 89%, 62%),
+    hsl(230, 89%, 65%)
+  );
+}
+
+.btn-rock {
+  background: linear-gradient(
+    to bottom,
+    hsl(349, 71%, 52%),
+    hsl(349, 70%, 56%)
+  );
+}
+
+.btn-scissors {
+  background: linear-gradient(to bottom, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
 }
