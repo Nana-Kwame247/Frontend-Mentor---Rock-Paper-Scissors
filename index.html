@@ -28,43 +28,51 @@
           <p id="score">0</p>
         </div>
       </header>
-      <!-- <main>
-        <button class="btn-circle btn-paper" data-choice="paper">
+      <main id="main">
+        <button class="btn-circle btn-paper pick" data-choice="paper">
           <span class="wrapper">
             <img src="images/icon-paper.svg" alt="paper icon" />
           </span>
         </button>
-        <button class="btn-circle btn-scissors" data-choice="scissors">
+        <button class="btn-circle btn-scissors pick" data-choice="scissors">
           <span class="wrapper">
             <img src="images/icon-scissors.svg" alt="scissors icon" />
           </span>
         </button>
-        <button class="btn-circle btn-rock" data-choice="rock">
+        <button class="btn-circle btn-rock pick" data-choice="rock">
           <span class="wrapper">
             <img src="images/icon-rock.svg" alt="rock icon" />
           </span>
         </button>
-      </main> -->
+      </main>
 
       <button class="btn-rules">Rules</button>
     </div>
     <!-- creating playing field -->
-    <div class="selection">
+    <div class="selection" id="selection">
       <div>
         <h2>You picked</h2>
-        <button class="btn-circle btn-paper" data-choice="paper">
+        <button
+          class="btn-circle btn-paper"
+          data-choice="paper"
+          id="user_select"
+        >
           <span class="wrapper">
             <img src="images/icon-paper.svg" alt="paper icon" />
           </span>
         </button>
       </div>
       <div>
-        <p class="big-text">You <span id="win">win</span></p>
+        <p class="big-text">You <span id="winner">win</span></p>
         <button class="btn" id="reset">Play again</button>
       </div>
       <div>
         <h2>The house picked</h2>
-        <button class="btn-circle btn-rock" data-choice="rock">
+        <button
+          class="btn-circle btn-rock"
+          data-choice="rock"
+          id="computer_select"
+        >
           <span class="wrapper">
             <img src="images/icon-rock.svg" alt="rock icon" />
           </span>

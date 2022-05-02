@@ -1,8 +1,15 @@
-const buttons = document.querySelectorAll(".btn-circle");
+const buttons = document.querySelectorAll(".pick");
 const scoreEl = document.getElementById("score");
+const main = document.getElementById("main");
+const selection = document.getElementById("selection");
+const reset = document.getElementById("reset");
+const user_select = document.getElementById("user_select");
+const computer_select = document.getElementById("computer_select");
+const winner = document.getElementById("winner");
+
 const choices = ["paper", "rock", "scissors"];
-let userChoice = undefined;
 let score = 0;
+let userChoice = undefined;
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -12,10 +19,22 @@ buttons.forEach((button) => {
   });
 });
 
+//reseting
+
+reset.addEventListener("click", () => {
+  main.style.display = "flex";
+  selection.style.display = "none";
+});
+
 //function to check winner
 
 function checkWinner() {
   const computerChoice = pickRandomChoice();
+
+  //update the view
+
+  updateSelection(user_select, userChoice);
+  updateSelection(computer_select, computerChoice);
 
   if (
     (userChoice === "paper" && computerChoice === "rock") ||
@@ -25,13 +44,22 @@ function checkWinner() {
     //user won
     // console.log("you won");
     updateScore(1);
+    winner.innerText = "win";
   } else if (userChoice === computerChoice) {
     //draw
+
+    winner.innerText = "draw";
     // console.log("draw");
   } else {
     // console.log("you lost");
     updateScore(-1);
+    winner.innerText = "Lost";
   }
+
+  //show the selection slash hide main
+
+  main.style.display = "none";
+  selection.style.display = "flex";
 }
 
 //function to increase score
@@ -51,4 +79,17 @@ function pickRandomChoice() {
   } else {
     return "scissors";
   }
+}
+
+function updateSelection(selectionEl, choice) {
+  //class reset
+  selectionEl.classList.remove("btn-paper");
+  selectionEl.classList.remove("btn-rock");
+  selectionEl.classList.remove("btn-scissors");
+
+  //updating the image
+  const img = selectionEl.querySelector("img");
+  selectionEl.classList.add(`btn-${choice}`);
+  img.src = `images/icon-${choice}.svg`;
+  img.alt = choice;
 }
